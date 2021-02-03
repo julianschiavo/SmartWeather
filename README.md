@@ -1,3 +1,3 @@
 # SmartWeather
 
-A description of this package.
+Predicts the weather in Hong Kong using Apple's `CoreML` framework.
