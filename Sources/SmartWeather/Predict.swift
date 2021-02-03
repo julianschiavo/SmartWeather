@@ -14,10 +14,10 @@ struct Predict: ParsableCommand {
     @Option(name: .shortAndLong, help: "The day of the date")
     private var day: Int
     
-    @Option(name: .long, help: "The temperature yesterday")
+    @Option(name: .customLong("yesterday"), help: "The temperature yesterday")
     private var yesterdayTemperature: Double
     
-    @Option(name: .long, help: "The temperature the day before yesterday")
+    @Option(name: .customLong("day-before-yesterday"), help: "The temperature the day before yesterday")
     private var dayBeforeYesterdayTemperature: Double
     
     func run() throws {
@@ -33,6 +33,6 @@ struct Predict: ParsableCommand {
         let date = Calendar.current.date(from: dateComponents) ?? Date()
         let formattedDate = dateFormatter.string(from: date)
         
-        print("It's going to be \(temperature)°C on \(formattedDate).")
+        print("It's going to be \(temperature)°C on \(formattedDate) in Tai Po, Hong Kong.")
     }
 }
